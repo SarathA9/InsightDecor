@@ -6,7 +6,7 @@ import * as THREE from 'three';
 import Msphere from './Sphere'
 
 const LandingContainer = styled.div`
-  height: 100vh;
+  height: 85vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -43,7 +43,7 @@ const Title = styled.h1`
 `;
 
 const Subtitle = styled.p`
-  font-size: 1.6rem;
+  font-size: 1.1rem;
   margin-bottom: 2rem;
   max-width: 700px;
   color: white;
@@ -159,7 +159,7 @@ function LandingPage() {
         Step into the future of home design with our cutting-edge AR technology.
         Transform your space and bring your vision to life like never before.
       </Subtitle>
-      <CTAButton>Start Designing</CTAButton>
+      <CTAButton>Start Exploring</CTAButton>
     </LandingContainer>
   );
 }
