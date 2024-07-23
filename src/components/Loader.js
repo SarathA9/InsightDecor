@@ -1,4 +1,3 @@
-// src/components/Loader.js
 import React from 'react';
 import styled from 'styled-components';
 
@@ -14,48 +13,66 @@ const LoaderWrapper = styled.div`
   background: rgba(0, 0, 0, 0.5);
   z-index: 1000;
 
-  .loader {
-    position: relative;
-    width: 160px;
-    height: 160px;
-    border: 4px solid #282828;
-    overflow: hidden;
-    border-radius: 50%;
-    box-shadow: -5px -5px 5px rgba(255, 255, 255, 0.1),
-      10px 10px 10px rgba(0, 0, 0, 0.4),
-      inset -5px -5px 5px rgba(255, 255, 255, 0.2),
-      inset 10px 10px 10px rgba(0, 0, 0, 0.4);
-  }
-  .loader:before {
-    content: "";
+  .jimu-primary-loading {
     position: absolute;
-    top: 25px;
-    left: 25px;
-    right: 25px;
-    bottom: 25px;
-    z-index: 10;
-    background: #212121;
-    border-radius: 50%;
-    border: 2px solid #292929;
-    box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.2),
-      inset 3px 3px 5px rgba(0, 0, 0, 0.5);
+    right: calc(50% - 6.8px);
+    top: calc(50% - 16px);
+    width: 13.6px;
+    height: 32px;
+    background: #076fe5;
+    text-indent: -9999em;
+    margin: auto;
+    -webkit-animation: loading-keys-app-loading 0.8s infinite ease-in-out;
+    animation: loading-keys-app-loading 0.8s infinite ease-in-out;
   }
-  .loader span {
+
+  .jimu-primary-loading:before,
+  .jimu-primary-loading:after {
+    content: '';
     position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-image: linear-gradient(45deg, #00ffff, #ff00ff);
-    filter: blur(20px);
-    z-index: -1;
-    animation: animate 0.5s linear infinite;
+    top: 0;
+    width: 13.6px;
+    height: 32px;
+    background: #076fe5;
+    -webkit-animation: loading-keys-app-loading 0.8s infinite ease-in-out;
+    animation: loading-keys-app-loading 0.8s infinite ease-in-out;
   }
-  @keyframes animate {
-    0% {
-      transform: rotate(0deg);
+
+  .jimu-primary-loading:before {
+    left: -19.992px;
+  }
+
+  .jimu-primary-loading:after {
+    left: 19.992px;
+    -webkit-animation-delay: 0.32s !important;
+    animation-delay: 0.32s !important;
+  }
+
+  @-webkit-keyframes loading-keys-app-loading {
+    0%, 80%, 100% {
+      opacity: .75;
+      box-shadow: 0 0 #076fe5;
+      height: 32px;
     }
-    100% {
-      transform: rotate(360deg);
+
+    40% {
+      opacity: 1;
+      box-shadow: 0 -8px #076fe5;
+      height: 40px;
+    }
+  }
+
+  @keyframes loading-keys-app-loading {
+    0%, 80%, 100% {
+      opacity: .75;
+      box-shadow: 0 0 #076fe5;
+      height: 32px;
+    }
+
+    40% {
+      opacity: 1;
+      box-shadow: 0 -8px #076fe5;
+      height: 40px;
     }
   }
 `;
@@ -63,9 +80,7 @@ const LoaderWrapper = styled.div`
 const Loader = () => {
   return (
     <LoaderWrapper>
-      <div className="loader">
-        <span></span>
-      </div>
+      <div className="jimu-primary-loading"></div>
     </LoaderWrapper>
   );
 };

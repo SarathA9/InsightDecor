@@ -61,16 +61,15 @@ const CTAButton = styled.button`
   position: relative;
   border: none;
   font-size: 14px;
-  font-family: inherit;
+  font-family: 'Rajdhani', sans-serif;
   cursor: pointer;
   color: #fff;
-  width: 9em;
-  height: 3em;
+  padding:10px;
   line-height: 2em;
   text-align: center;
   background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
   background-size: 300%;
-  border-radius: 30px;
+  border-radius: 10px;
   z-index: 1;
   margin-top: 50px;
   text-transform: uppercase;
@@ -91,7 +90,7 @@ const CTAButton = styled.button`
     z-index: -1;
     background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
     background-size: 400%;
-    border-radius: 35px;
+    border-radius: 10px;
     transition: 1s;
   }
 
